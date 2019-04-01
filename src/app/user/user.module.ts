@@ -9,8 +9,10 @@ const routes = [
   {path: 'login-pki', component: LoginPkiComponent},
   {path: 'login', component: LoginComponent},
   {path: 'loginentrance', component:LoginentranceComponent},
-  {path: 'quickmodel', loadChildren: '../quickmodel/quickmodel.module#QuickmodelModule'}
-]
+  {path: 'quickmodel', loadChildren: '../quickmodel/quickmodel.module#QuickmodelModule'},
+  { path: 'modelbase', loadChildren: '../modelbase/modelbase.module#ModelbaseModule'},
+  { path: 'resourcepool', loadChildren: '../resourcepool/resourcepool.module#ResourcepoolModule'}
+];
 @NgModule({
   declarations: [LoginComponent, LoginPkiComponent, LoginentranceComponent],
   imports: [
