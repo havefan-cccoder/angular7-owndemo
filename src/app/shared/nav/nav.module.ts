@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 const routes = [
   {path: 'quickmodel', loadChildren: '../../quickmodel/quickmodel.module#QuickmodelModule'},
   { path: 'modelbase', loadChildren: '../../modelbase/modelbase.module#ModelbaseModule'},
-  { path: 'resourcepool', loadChildren: '../../resourcepool/resourcepool.module#ResourceModule'}
+  { path: 'resourcepool', loadChildren: '../../resourcepool/resourcepool.module#ResourcePoolModule'}
 ];
 @NgModule({
   declarations: [NavComponent],

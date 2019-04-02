@@ -6,6 +6,7 @@ import { DatatableComponent } from './comps/datatable/datatable.component';
 import { TabsComponent } from './comps/tabs/tabs.component';
 import { RouterModule } from '@angular/router';
 import { NavModule } from '../shared/nav/nav.module';
+import { HeaderModule } from '../shared/header/header.module';
 const routes = [
   { path: '', component: QuickmodelComponent}
 ];
@@ -14,6 +15,7 @@ const routes = [
   imports: [
     CommonModule,
     NavModule,
+    HeaderModule,
     RouterModule.forChild(routes)
   ]
 })
