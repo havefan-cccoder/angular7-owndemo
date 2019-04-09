@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Urls } from './url';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    Authorization: "Bearer " + localStorage.getItem("token")
+  })
+};
 
 const user = {
   username: 'testjj',
@@ -11,15 +18,17 @@ const user = {
 })
 export class UserService {
 
-  private dataUrl = '/master/login';
-  private topicUrl = '/master/lightModel/baseInformation/getWeidu';
+  // private dataUrl = '/master/login';
+  // private topicUrl = '/master/lightModel/baseInformation/getWeidu';
 
-  getData(): Observable<any> {
-    return this.http.post<any>(this.dataUrl, user);
+  login(): Observable<any> {
+    // return this.http.post<any>(this.dataUrl, user);
+    return this.http.post<any>(Urls.login, user);
   }
 
-  getTopic(a: any): Observable<any> {
-    return this.http.get<any>(this.topicUrl, a);
+  getWeidu(): Observable<any> {
+    // return this.http.get<any>(this.topicUrl, a);
+    return this.http.get<any>(Urls.getWeidu, httpOptions);
   }
   constructor(private http: HttpClient) { }
 }
