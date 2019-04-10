@@ -4,7 +4,7 @@ import { LoginComponent } from './comps/login/login.component';
 import { LoginPkiComponent } from './comps/login-pki/login-pki.component';
 import { LoginentranceComponent } from './comps/loginentrance/loginentrance.component';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 const routes = [
   {path: 'login-pki', component: LoginPkiComponent},
   {path: 'login', component: LoginComponent},
@@ -17,6 +17,7 @@ const routes = [
   declarations: [LoginComponent, LoginPkiComponent, LoginentranceComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ]
 })

@@ -9,10 +9,10 @@ const httpOptions = {
   })
 };
 
-const user = {
-  username: 'testjj',
-  password: '96E79218965EB72C92A549DD5A330112'
-};
+// const user = {
+//   username: 'testjj',
+//   password: '96E79218965EB72C92A549DD5A330112'
+// };
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +21,7 @@ export class UserService {
   // private dataUrl = '/master/login';
   // private topicUrl = '/master/lightModel/baseInformation/getWeidu';
 
-  login(): Observable<any> {
+  login(user): Observable<any> {
     // return this.http.post<any>(this.dataUrl, user);
     return this.http.post<any>(Urls.login, user);
   }
