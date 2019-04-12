@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { from } from 'rxjs';
+import { Md5 } from "ts-md5";
 // const user = {
 //   username: '555',
 //   password: '555'
@@ -15,9 +16,10 @@ export class LoginComponent implements OnInit {
   data: any[];
   user = {
     username: '',
-    password: ''
+    password: null
   }; // 这里是定义变量（属性）
   login(): void {
+    this.user.password = Md5.hashStr(this.user.password);
     this.userService.login(this.user).subscribe(data => {localStorage.setItem("token", data.token); });
   }
 
