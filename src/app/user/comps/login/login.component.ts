@@ -25,6 +25,14 @@ export class LoginComponent implements OnInit {
     this.userService.login(user).subscribe(data => {if(data.token){localStorage.setItem("token", data.token); this.router.navigate(['quickmodel']);} });
   }
 
+  loginEnter(e: any): void {
+    if(e.keyCode == 13){
+      const user = Object.assign({}, this.user);
+    user.password = Md5.hashStr(this.user.password);
+    this.userService.login(user).subscribe(data => {if(data.token){localStorage.setItem("token", data.token); this.router.navigate(['quickmodel']);} });
+    }
+  }
+
   getMeg(): void {
     this.userService.getWeidu().subscribe(data => { this.data = data; });
   }

@@ -7,11 +7,12 @@ import { TabsComponent } from './comps/tabs/tabs.component';
 import { RouterModule } from '@angular/router';
 import { NavModule } from '../shared/nav/nav.module';
 import { HeaderModule } from '../shared/header/header.module';
+import { TablistComponent } from './comps/tabs/tablist/tablist.component';
 const routes = [
   { path: '', component: QuickmodelComponent}
 ];
 @NgModule({
-  declarations: [QuickmodelComponent, GraphComponent, DatatableComponent, TabsComponent],
+  declarations: [QuickmodelComponent, GraphComponent, DatatableComponent, TabsComponent, TablistComponent],
   imports: [
     CommonModule,
     NavModule,

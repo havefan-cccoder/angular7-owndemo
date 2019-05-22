@@ -1,0 +1,75 @@
+@blue_color:#3773ce;
+@gray_bg:#e1e1e1;
+
+.default_btn{
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.first_tabbtn_box{
+  background: @gray_bg;
+  border-top: 1px solid #fff;
+
+  border-radius: 5px 5px 0 0;
+
+  .first_tab_btn{
+    .default_btn();
+    font-size: 16px;
+    background: @gray_bg;
+    padding: 10px;
+  }
+
+  .first_tab_btn_checked{
+    background: #fff;
+  }
+
+}
+
+.first_tabbtn_box > button:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+.second_tabbtn_box{
+    border-bottom: 1px solid #a4a4a4;
+    padding: 0;
+    .second_tab_btn{
+      .default_btn();
+      font-size: 16px;
+      padding: 8px 0 8px 0;
+      margin: 10px;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .second_tab_btn_checked{
+      color: @blue_color;
+      border-bottom: 2px solid @blue_color;
+    }
+}
+.third_tab_box{
+    display: flex;
+    .third_tabbtn_box{
+        border-right: 1px solid #a4a4a4;
+        padding: 10px;
+        margin: 10px;
+        .third_tab_btn{
+            .default_btn();
+            background: linear-gradient(0deg,#dbdbdb,#ebecee);
+            width: 103px;
+            height: 30px;
+            font-size: 12px;
+            color: #666;
+            margin: 5px 8px 0;
+            border: 1px solid #b9b9b9;
+            display: block;
+        }
+
+        .third_tab_btn_checked{
+          background: @blue_color;
+          color: #fff;
+          padding: 5px 10px;
+          border: none;
+        }
+    }
+}

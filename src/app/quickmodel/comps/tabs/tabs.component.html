@@ -1,3 +1,97 @@
-<p>
-  tabs works!
-</p>
+<!-- <p>
+    tabs works!
+</p> -->
+<div class="first_tabbtn_box">
+    <button (click)="chooseFirstTab('myresource')" 
+            class="first_tab_btn" 
+            [ngClass]="{'first_tab_btn_checked': firstTab == 'myresource'}">我的资源</button>
+    <button (click)="chooseFirstTab('resourcetag')" 
+            class="first_tab_btn" 
+            [ngClass]="{'first_tab_btn_checked': firstTab == 'resourcetag'}">模型标签</button>
+    <button (click)="chooseFirstTab('datacenter')" 
+            class="first_tab_btn" 
+            [ngClass]="{'first_tab_btn_checked': firstTab == 'datacenter'}">数据中心</button>
+</div>
+
+
+<div [ngSwitch]="firstTab">
+  <div *ngSwitchCase="'myresource'">
+    <div class="second_tabbtn_box">
+        <button (click)="chooseSecondTab('uploaded')"
+                class="second_tab_btn"
+                [ngClass]="{'second_tab_btn_checked': secondTab == 'uploaded'}">上传资源</button>
+        <button (click)="chooseSecondTab('history')"
+                class="second_tab_btn"
+                [ngClass]="{'second_tab_btn_checked': secondTab == 'history'}">历史资源</button>
+    </div>
+
+    <div [ngSwitch]="secondTab">
+        <div *ngSwitchCase="'uploaded'">
+          <ul>
+            <li>这些是当前上传的资源列表</li>
+            <li>这些是当前上传的资源列表</li>
+            <li>这些是当前上传的资源列表</li>
+          </ul>
+        </div>
+        <div *ngSwitchCase="'history'" class="third_tab_box">
+          <div class="third_tabbtn_box">
+              <button (click)="chooseThirdTab('history_resource')"
+                      class="third_tab_btn"
+                      [ngClass]="{'third_tab_btn_checked': thirdTab == 'history_resource'}">历史资源</button>
+              <button (click)="chooseThirdTab('history_result')"
+                      class="third_tab_btn"
+                      [ngClass]="{'third_tab_btn_checked': thirdTab == 'history_result'}">历史结果</button>
+              <button (click)="chooseThirdTab('shared_upload')"
+                      class="third_tab_btn"
+                      [ngClass]="{'third_tab_btn_checked': thirdTab == 'shared_upload'}">共享上传</button>
+          </div>
+
+          <div [ngSwitch]="thirdTab">
+            <div *ngSwitchCase="'history_resource'">
+              <ul>
+                <li>这些是历史资源的资源列表</li>
+                <li>这些是历史资源的资源列表</li>
+                <li>这些是历史资源的资源列表</li>
+              </ul>
+              <app-tablist [tabList]="tabList"></app-tablist>
+            </div>
+            <div *ngSwitchCase="'history_result'">
+              <ul>
+                <li>这些是历史结果的资源列表</li>
+                <li>这些是历史结果的资源列表</li>
+                <li>这些是历史结果的资源列表</li>
+              </ul>
+              <app-tablist [tabList]="tabList"></app-tablist>
+            </div>
+            <div *ngSwitchCase="'shared_upload'">
+              <ul>
+                <li>这些是共享上传的资源列表</li>
+                <li>这些是共享上传的资源列表</li>
+                <li>这些是共享上传的资源列表</li>
+              </ul>
+              <app-tablist [tabList]="tabList"></app-tablist>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+  <div *ngSwitchCase="'resourcetag'">
+    <ul>
+      <li>这里是模型标签的资源列表</li>
+      <li>这里是模型标签的资源列表</li>
+      <li>这里是模型标签的资源列表</li>
+    </ul>
+    <app-tablist [tabList]="tabList"></app-tablist>
+
+  </div>
+  <div *ngSwitchCase="'datacenter'">
+    <ul>
+        <li>这里是数据中心的资源列表</li>
+        <li>这里是数据中心的资源列表</li>
+        <li>这里是数据中心的资源列表</li>
+    </ul>
+    <app-tablist [tabList]="tabList"></app-tablist>
+  </div>
+  <!-- <div *ngSwitchDefault>4</div> -->
+</div>

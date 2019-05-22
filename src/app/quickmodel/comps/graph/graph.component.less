@@ -1,0 +1,48 @@
+/*变量*/
+@outer_box_top:50px;
+@outer_box_left:18px;
+@p_after_left:70px;
+@p_after_top:-12px;
+@span_top:17px;
+@span_after_top:-29px;
+
+
+.pseudo_class{
+    content: '\0362';
+    position: absolute;
+    font-size: 33px;
+}
+.outer_box{
+  position: relative;
+  margin-top: @outer_box_top;
+  margin-left: @outer_box_left;
+  p::after{
+    .pseudo_class();
+    left: @p_after_left;
+    top:@p_after_top;
+  }
+  span{
+    position: absolute;
+    top:@span_top;
+  }
+  span.result_span::after,
+  span.data_processing::after{
+    .pseudo_class();
+    top:@span_after_top;
+  }
+  span.result_span{
+    left: 102px;
+  }
+  span.result_span::after{
+    left: 60px;
+  }
+  span.data_processing{
+    left: 190px;
+  }
+  span.data_processing::after{
+    left: 92px;
+  }
+  span.visualization{
+    left: 312px;
+  }
+}
