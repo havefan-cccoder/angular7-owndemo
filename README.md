@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 默认进入login页面，登录成功后进入quickmodel页面，这个页面有很多组件，所以这些组件放进了quickmodel module里（文件结构上）。
 根路由里（app-routing.ts文件）设置默认路由&需要懒加载的模块，即login所在的module。这module里定义（放在declarations数组里）所有的组件和（放在imports数组里）子模块（quickmodel module等）。
 同理quickmodel module（.ts文件）里定义所有的组件和它的子模块（比如 nav module等）
+
+启动:npm install && npm start
