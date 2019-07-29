@@ -3,3 +3,14 @@
 <p>
   modelbase works!
 </p>
+<a [routerLink]="[{ outlets: { child1Output: ['child1'] } }]">子组件1</a>
+<a [routerLink]="[{ outlets: { child2Output: ['child2'] } }]">子组件2</a>
+<div>
+  这里是子组件1的渲染位置：
+  <router-outlet name="child1Output"></router-outlet>
+</div>
+<hr>
+<div>
+  这里是子组件2的渲染位置：
+  <router-outlet name="child2Output"></router-outlet>
+</div>
